@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="Klondike.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Klondike"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style x:Key="CardStyle" TargetType="Rectangle" >
+            <Setter Property="Height" Value="250"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Margin" Value="20,50,20,50"/>
+            <Setter Property="Fill" Value="CadetBlue"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <Rectangle Style="{StaticResource CardStyle}" x:Name="DrawPile" RelativePanel.AlignLeftWithPanel="True" Margin="50,50,20,50" />
+            <Rectangle Style="{StaticResource CardStyle}" x:Name="DiscardPile" RelativePanel.RightOf="DrawPile" />
+            <Rectangle Style="{StaticResource CardStyle}" x:Name="DiamondsPile" RelativePanel.AlignRightWithPanel="True" Margin="20,50,50,50" />
+            <Rectangle Style="{StaticResource CardStyle}" x:Name="SpadesPile" RelativePanel.LeftOf="DiamondsPile" />
+            <Rectangle Style="{StaticResource CardStyle}" x:Name="HeartsPile" RelativePanel.LeftOf="SpadesPile" />
+            <Rectangle Style="{StaticResource CardStyle}" x:Name="ClubsPile" RelativePanel.LeftOf="HeartsPile" />
+        </RelativePanel>
+        <RelativePanel Grid.Row="1" HorizontalAlignment="Center">
+            <Rectangle x:Name="FieldCard1" Style="{StaticResource CardStyle}" />
+            <Rectangle x:Name="FieldCard2" Style="{StaticResource CardStyle}" RelativePanel.RightOf="FieldCard1" />
+            <Rectangle x:Name="FieldCard3" Style="{StaticResource CardStyle}" RelativePanel.RightOf="FieldCard2" />
+            <Rectangle x:Name="FieldCard4" Style="{StaticResource CardStyle}" RelativePanel.RightOf="FieldCard3" />
+            <Rectangle x:Name="FieldCard5" Style="{StaticResource CardStyle}" RelativePanel.RightOf="FieldCard4" />
+            <Rectangle x:Name="FieldCard6" Style="{StaticResource CardStyle}" RelativePanel.RightOf="FieldCard5" />
+            <Rectangle x:Name="FieldCard7" Style="{StaticResource CardStyle}" RelativePanel.RightOf="FieldCard6" />
+        </RelativePanel>
+    </Grid>
+</Page>
